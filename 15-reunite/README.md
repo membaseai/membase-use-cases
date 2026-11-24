@@ -64,7 +64,7 @@ person decides.
 
 ## How Membase serves it
 
-- **Local engine.** `Membase(local=data/15-reunite/operator)` runs `unibaseio-membase-core` in the app's
+- **Local engine.** `Membase(local=data/15-reunite/operator)` runs `membase-core` in the app's
   process. The operator's directory holds two Memories, `Families` and `Seekers`; each write
   lands in the one its record belongs to, and matching searches `Families` alone.
 - **Documents.** Each record is written with `add_document` and its id as `custom_id`

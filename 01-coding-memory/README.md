@@ -66,7 +66,7 @@ installer backs it up as `<file>.membase-backup`.
 
 The hooks need the Membase Python SDK, 0.4.0 or newer (the memory API). `run.sh` uses `uv` when it is installed: the first hook
 takes a few seconds to build a cached environment, and later hooks start immediately. Without uv,
-run `pip install 'unibaseio-membase>=0.4.0'`, or set `MEMBASE_HOOK_PYTHON=/path/to/python` in
+run `pip install 'membase-ai>=0.4.1'`, or set `MEMBASE_HOOK_PYTHON=/path/to/python` in
 `config.env`. The hooks need macOS or Linux; Windows is not supported.
 
 The MCP server reads `MEMBASE_API_KEY` from the environment the CLI starts in (Claude Code
@@ -145,7 +145,7 @@ project's environment; it wins over `config.env`.
 | `MEMBASE_BASE_URL` | default `https://api.app.membase.com` |
 | `MEMBASE_RECALL_BUDGET` | seconds a prompt waits for memory (default 10) |
 | `MEMBASE_AUTOSAVE` | `0` turns off saving; recall still works |
-| `MEMBASE_HOOK_PYTHON` | a Python with `unibaseio-membase`, instead of uv |
+| `MEMBASE_HOOK_PYTHON` | a Python with `membase-ai`, instead of uv |
 | `MEMBASE_HOME` | where the settings, log and state live (default `~/.membase`) |
 
 ## Try it

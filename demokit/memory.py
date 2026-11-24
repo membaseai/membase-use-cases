@@ -3,7 +3,7 @@
 * **hosted** — the Membase service, with developer keys. One account, its Memories made in
   the app (or by `scripts/bootstrap_hosted.py`). This is the product itself.
 * **local** — the same API answered in process by the local engine
-  (`unibaseio-membase[local]`), one directory per end user. This is how an app that serves
+  (`membase-ai[local]`), one directory per end user. This is how an app that serves
   many people keeps each person's memory apart.
 
 The memory API never names a Memory in a request: a read covers every Memory the credential

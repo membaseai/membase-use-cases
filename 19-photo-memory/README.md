@@ -13,7 +13,7 @@ ate"* finds the custard tart and the birthday cake, and nothing else.
 **Shows:** media memory (`membase.media`): a photo remembered as a description of what is in it,
 and found by what you remember of it.
 
-**Base:** the local engine with the `[media]` extra (`unibaseio-membase[media]`). Media memory
+**Base:** the local engine with the `[media]` extra (`membase-ai[media]`). Media memory
 runs on the local engine only today.
 
 ## Video
@@ -51,7 +51,7 @@ Memory in the store.
 
 ```bash
 uv sync                                       # once, at the repo root
-uv pip install 'unibaseio-membase[media]'     # media memory (local engine, Python 3.12+)
+uv pip install 'membase-ai[media]'     # media memory (local engine, Python 3.12+)
 uv run 19-photo-memory/seed.py                # fetch the photos, add Lisbon and Home (~30 s)
 uv run 19-photo-memory/app.py                 # open http://127.0.0.1:8719
 ```

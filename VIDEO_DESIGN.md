@@ -36,7 +36,7 @@ Each video has four parts:
 - **Waits.** Recall, learning and model calls are played fast, with a corner badge such as
   "⏩ 26 s wait · 12× faster". Nothing is cut silently, and nothing is staged.
 - **Outro (2 s).** The demo's name and number, its base (Hosted Membase or Local engine), and
-  "github.com/unibaseio/membase-use-cases".
+  "github.com/membaseai/membase-use-cases".
 
 **Preview loop.** About 12 s from the main part, at 960 px wide and 12 fps (GIF), for each demo
 README.

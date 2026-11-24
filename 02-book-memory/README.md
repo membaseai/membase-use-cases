@@ -70,7 +70,7 @@ answer's footnote quotes the passage instead.
 
 ## How Membase serves it
 
-The app talks to Membase only through the Python SDK (`unibaseio-membase`). The same code runs on
+The app talks to Membase only through the Python SDK (`membase-ai`). The same code runs on
 two bases, and what happens behind each call differs.
 
 ### Hosted Membase
@@ -124,7 +124,7 @@ flowchart LR
 ### Local engine
 
 With `MEMBASE_DEMO_MODE=local`, the same SDK calls are answered in the app's own process by
-`unibaseio-membase-core`. The memory lives in `data/02-book-memory/default/`.
+`membase-core`. The memory lives in `data/02-book-memory/default/`.
 
 - `add` reads a story into a topic tree right away, about 15 s for a story of 12 KB. There is no
   learning run to wait for.

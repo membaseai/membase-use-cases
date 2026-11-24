@@ -1,7 +1,7 @@
 {
   "name": "membase-demos",
   "owner": {
-    "name": "Unibase"
+    "name": "Membase"
   },
   "description": "Membase demo plugins: automatic long-term memory for coding agents.",
   "plugins": [

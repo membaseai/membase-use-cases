@@ -1,8 +1,8 @@
 #!/bin/sh
-# Starts a Membase memory hook with a Python that has the Membase SDK (unibaseio-membase):
+# Starts a Membase memory hook with a Python that has the Membase SDK (membase-ai):
 #   1. $MEMBASE_HOOK_PYTHON, from the environment or ~/.membase/config.env;
 #   2. uv, which keeps a cached environment with the SDK (the first run takes a few seconds);
-#   3. python3, which must already have the SDK: pip install unibaseio-membase
+#   3. python3, which must already have the SDK: pip install membase-ai
 # Usage: run.sh <claude|codex|gemini> <event>   (the hook's JSON arrives on stdin)
 HERE=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 HOOK="$HERE/membase_memory.py"
@@ -14,6 +14,6 @@ if [ -n "$MEMBASE_HOOK_PYTHON" ]; then
   exec "$MEMBASE_HOOK_PYTHON" "$HOOK" "$@"
 fi
 if command -v uv >/dev/null 2>&1; then
-  exec uv run --quiet --no-project --with 'unibaseio-membase>=0.4.0' python "$HOOK" "$@"
+  exec uv run --quiet --no-project --with 'membase-ai>=0.4.1' python "$HOOK" "$@"
 fi
 exec python3 "$HOOK" "$@"

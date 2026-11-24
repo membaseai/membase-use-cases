@@ -98,7 +98,7 @@ flowchart LR
   during a learning run is `pending`, and that run starts the next one when it ends.
 - **Every search is retrieval** over what the Memory holds: `document` passages from the bible
   and the scenes, titled by file and section. A warm search takes a few seconds.
-- **On the local engine** the same calls are answered in-process by `unibaseio-membase-core`. The bible
+- **On the local engine** the same calls are answered in-process by `membase-core`. The bible
   becomes a topic tree in SQLite and FAISS, a scene can be searched as soon as it is written,
   and no other AI can reach it, unless you run `membase --local mcp` on the same machine.
 
