@@ -11,7 +11,7 @@ Every demo is written once against the same SDK (`membase.Membase`) and runs on 
 | Base | What it is | Use it for |
 |---|---|---|
 | **hosted** | The Membase service, with a developer key from the app (Connect › Developer keys) | One person and their AIs. This is the product itself. |
-| **local** | The same API, answered in process by the local engine (`unibaseio-membase[local]`), one directory per end user | Apps that serve many people, such as companions and games, where each person's memory lives in its own directory |
+| **local** | The same API, answered in process by the local engine (`membase-ai[local]`), one directory per end user | Apps that serve many people, such as companions and games, where each person's memory lives in its own directory |
 
 Each demo has a default base. Set `MEMBASE_DEMO_MODE=local|hosted` to switch. Agent memory
 (cases and skills learned from agent runs) exists only on the local engine today.

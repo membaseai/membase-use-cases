@@ -65,7 +65,7 @@ and the review pile is whatever memory holds about your past sessions.
 
 ## How Membase serves it
 
-The app only talks to Membase through the Python SDK (`unibaseio-membase`). The same code runs
+The app only talks to Membase through the Python SDK (`membase-ai`). The same code runs
 on two bases, and what happens behind each call differs.
 
 ### Hosted Membase
@@ -129,12 +129,12 @@ flowchart LR
 ### Local engine
 
 With `MEMBASE_DEMO_MODE=local`, the same SDK calls are answered in the app's own process by the
-local engine (`unibaseio-membase-core`). Nothing leaves the machine except the model calls the engine
+local engine (`membase-core`). Nothing leaves the machine except the model calls the engine
 makes with your `OPENAI_API_KEY`.
 
 ```mermaid
 flowchart LR
-  SDK["Membase SDK<br/>local=data/03-study-buddy/default"] --> Eng["unibaseio-membase-core engine<br/>(in process)"]
+  SDK["Membase SDK<br/>local=data/03-study-buddy/default"] --> Eng["membase-core engine<br/>(in process)"]
   Eng --> Docs[("Lectures → topic tree<br/>SQLite + FAISS")]
   Eng --> Eps[("Session notes → episodes<br/>SQLite + FAISS")]
   Eng --> Prof[("Profile facts")]

@@ -17,7 +17,7 @@ moving through it.
 **Shows:** media memory (`membase.media`): a video remembered as its shots and its spoken lines,
 each with its time and speaker, and found by what was seen or what was said.
 
-**Base:** the local engine with the `[media]` extra (`unibaseio-membase[media]`). Media memory
+**Base:** the local engine with the `[media]` extra (`membase-ai[media]`). Media memory
 runs on the local engine only today.
 
 The videos are the Blender Foundation's open movies, *Elephants Dream* (2006), *Tears of Steel*
@@ -63,7 +63,7 @@ you set it yourself), and list and search read every Memory in the store.
 
 ```bash
 uv sync                                       # once, at the repo root
-uv pip install 'unibaseio-membase[media]'     # media memory (local engine, Python 3.12+)
+uv pip install 'membase-ai[media]'     # media memory (local engine, Python 3.12+)
 uv run 18-video-memory/seed.py                # fetch the three videos, add two of them (~2 min)
 uv run 18-video-memory/app.py                 # open http://127.0.0.1:8718
 ```

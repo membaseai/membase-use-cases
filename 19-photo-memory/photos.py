@@ -140,7 +140,7 @@ def fetch(key: str) -> Path:
     print(f"  downloading {r['title']}")
     req = urllib.request.Request(
         r["url"],
-        headers={"User-Agent": "membase-use-cases/0.1 (github.com/unibaseio/membase-use-cases)"},
+        headers={"User-Agent": "membase-use-cases/0.1 (github.com/membaseai/membase-use-cases)"},
     )
     tmp = dest.with_name(dest.name + ".part")
     with urllib.request.urlopen(req, timeout=60) as resp, tmp.open("wb") as out:
