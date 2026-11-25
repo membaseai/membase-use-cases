@@ -4,8 +4,8 @@ that fix them.
 
     uv run 03-study-buddy/smoke.py            # on the demo's base (MEMBASE_DEMO_MODE to switch)
 
-Writes to its own data directory (local) or the configured account (hosted; use a fresh one
-from scripts/bootstrap_hosted.py, since the check counts weak spots). Exits non-zero with the
+Writes to its own data directory (local) or the configured account (hosted; use a test account
+with nothing in `Study` yet, since the check counts weak spots). Exits non-zero with the
 reason on any failure.
 """
 

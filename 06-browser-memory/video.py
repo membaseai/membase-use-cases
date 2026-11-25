@@ -6,7 +6,7 @@ ones, each citation pointing back to the page it came from.
 Recorded in the extension's demo window (extension/demo.html): the real page on the left, the
 real side panel on the right, the panel reading the page from a real tab with the same URL.
 
-    scripts/video/record_hosted.sh 06-browser-memory --containers Browsing
+    DEMO_ENV_FILE=.secrets/<name>.env .venv/bin/python scripts/video/make.py 06-browser-memory
 """
 
 import functools

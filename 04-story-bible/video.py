@@ -9,8 +9,8 @@ MCP with a read-only key, answers a question only the new scene can answer.
 A take is kept only if the check does not flag the scene's new fact (the key stamped 41), the
 scene is learned, and Claude Code's answer has the 41.
 
-Record on a fresh account (record_hosted.sh runs seed.py first and retries on a new account):
-scripts/video/record_hosted.sh 04-story-bible --containers "Story Bible" --read-key
+Record on a fresh test account with a `Story Bible` Memory and a Read key, after its seed.py:
+DEMO_ENV_FILE=.secrets/<name>.env .venv/bin/python scripts/video/make.py 04-story-bible
 """
 
 import json
@@ -128,7 +128,7 @@ async def ask_claude() -> dict:
     key = os.environ.get("MEMBASE_READ_KEY") or ""
     if not key:
         raise SystemExit(
-            "MEMBASE_READ_KEY is not set: make the account with bootstrap_hosted.py --read-key"
+            "MEMBASE_READ_KEY is not set: create a Read key in Connect > Developer keys"
         )
     work = Path(tempfile.mkdtemp(prefix="story-claude-"))
     cfg = {

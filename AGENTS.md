@@ -19,8 +19,8 @@ NN-name/
 - **Memory:** use `demokit.Memory(demo_dir_name, user=..., default_mode="local"|"hosted")`.
   Local mode keeps one directory per `user`, which is how an app keeps its end users apart.
   Hosted mode needs Memories that already exist in the account, and — because no request names
-  a Memory — a key per Memory the demo writes to or reads alone (`MEMBASE_KEY_FOR_<NAME>`);
-  `scripts/bootstrap_hosted.py` makes a test account with both.
+  a Memory — a key per Memory the demo writes to or reads alone (`MEMBASE_KEY_FOR_<NAME>`).
+  Make both in the app: the Memories, then keys under Connect > Developer keys.
 - **Writes off the request path:** use `demokit.writes.BackgroundWriter` on the local engine
   (one person's writes run in order; `pending`, `error` and `flush()` are there for the page).
   On hosted, use `demokit.writes.HostedQueue`: writes in order off the request path, and the page
@@ -49,8 +49,7 @@ NN-name/
 ## Verifying
 
 - Run `.venv/bin/python NN-name/smoke.py` on the demo's default base. A local smoke run uses a
-  fresh `DEMO_DATA_DIR`. A hosted smoke run uses its own test account:
-  `.venv/bin/python scripts/bootstrap_hosted.py --name NN-name --containers ...`, then
-  `DEMO_ENV_FILE=.secrets/NN-name.env`.
+  fresh `DEMO_DATA_DIR`. A hosted smoke run uses its own test account: put that account's keys
+  in `.secrets/NN-name.env` (git-ignored) and run with `DEMO_ENV_FILE=.secrets/NN-name.env`.
 - Take a screenshot after one real interaction (Playwright: `~/miniconda3/bin/python` has it,
   with Chromium). Save it to `docs/screenshot.png`, then look at it.

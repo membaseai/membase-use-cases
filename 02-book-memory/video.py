@@ -9,8 +9,8 @@ each one wrong every time. A take is kept only if the answer with memory has the
 (a cold potato; 36 and fifteen years), cites a line that is marked on the page and holds it, and
 the answer without does not have it.
 
-Record on a fresh account (SEED loads and verifies the book first):
-scripts/video/record_hosted.sh 02-book-memory --containers Book
+Record on a test account with a `Book` Memory (SEED loads and verifies the book first):
+DEMO_ENV_FILE=.secrets/<name>.env .venv/bin/python scripts/video/make.py 02-book-memory
 """
 
 import re

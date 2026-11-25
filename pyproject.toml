@@ -10,7 +10,6 @@ dependencies = [
     "httpx>=0.27",
     "openai>=1.40",
     "python-multipart>=0.0.9",
-    "eth-account>=0.13",
     "numpy>=1.26",
 ]
 

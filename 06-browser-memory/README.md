@@ -89,8 +89,7 @@ python -m http.server 18706 -d 06-browser-memory/pages   # the three fictional p
 
 In the Membase app, create a Memory named `Browsing` and a developer key that can write and
 reaches only `Browsing` (a write lands in the one Memory its key reaches), and put the key in
-`.env` as `MEMBASE_API_KEY`. `scripts/bootstrap_hosted.py --containers Browsing` makes both on a
-throwaway account.
+`.env` as `MEMBASE_API_KEY`.
 
 Then load the extension:
 

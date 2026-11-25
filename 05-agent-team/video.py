@@ -4,9 +4,9 @@ Membase learns it; the Fixer recalls it before touching the code and patches the
 Reviewer recalls both and the tests pass; the Auditor's read-only key can search, and its write
 comes back from Membase as HTTP 403.
 
-Record on an account made with per-agent keys, e.g.
-scripts/video/record_hosted.sh 05-agent-team --containers Team --read-key \
-  --keys investigator fixer reviewer auditor:read
+Record on a test account with a `Team` Memory and per-agent keys (MEMBASE_KEY_INVESTIGATOR,
+_FIXER, _REVIEWER write; MEMBASE_KEY_AUDITOR and MEMBASE_READ_KEY read), made in the app:
+DEMO_ENV_FILE=.secrets/<name>.env .venv/bin/python scripts/video/make.py 05-agent-team
 """
 
 META = {
