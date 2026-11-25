@@ -199,4 +199,4 @@ https://github.com/user-attachments/assets/dfc0ccb1-e478-4549-abd8-12e83bc55bf2
   base (`Memory`), the web shell (`web`), and the page assets served at `/kit`.
 - `NN-name/`: one demo, with `app.py` (the server), `static/` (the page), its own `README.md`
   and `smoke.py`. The smoke script runs the demo's flow against the real API.
-- `scripts/`: tooling for development, such as `bootstrap_hosted.py`.
+- `scripts/`: tooling for development, such as the video recorder in `scripts/video/`.

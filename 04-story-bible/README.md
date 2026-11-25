@@ -113,9 +113,7 @@ uv run 04-story-bible/app.py             # open http://127.0.0.1:8704
 
 **Hosted.** In the Membase app, create a Memory named `Story Bible` and a developer key that can
 write and reaches only `Story Bible` (a write lands in the one Memory its key reaches), and put
-it in `.env`. To try the MCP side, also create a key that can only read.
-`scripts/bootstrap_hosted.py --containers "Story Bible" --read-key` makes them on a throwaway
-account.
+it in `.env`. To try the MCP side, also create a key that can only read (`MEMBASE_READ_KEY`).
 
 Then, on the page:
 

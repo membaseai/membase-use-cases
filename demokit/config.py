@@ -28,8 +28,8 @@ def load_env(path: Path = ROOT / ".env") -> None:
             os.environ[key] = value
 
 
-# A second file first, so it wins over .env: scripts/bootstrap_hosted.py writes one per test
-# account (DEMO_ENV_FILE=.secrets/<name>.env).
+# A second file first, so it wins over .env: one per test account
+# (DEMO_ENV_FILE=.secrets/<name>.env).
 if os.environ.get("DEMO_ENV_FILE"):
     load_env(Path(os.environ["DEMO_ENV_FILE"]).expanduser())
 load_env()

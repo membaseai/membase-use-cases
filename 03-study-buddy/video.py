@@ -11,8 +11,8 @@ answer (`trap`), and otherwise the answer as the notes give it. A take is kept o
 misses are graded wrong, the pile comes back from memory, both session notes are learned and
 the pile then shows cards learned.
 
-Record on a fresh account (record_hosted.sh runs seed.py first and retries on a new account):
-scripts/video/record_hosted.sh 03-study-buddy --containers Study
+Record on a fresh test account with a `Study` Memory, after its seed.py:
+DEMO_ENV_FILE=.secrets/<name>.env .venv/bin/python scripts/video/make.py 03-study-buddy
 """
 
 META = {

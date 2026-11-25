@@ -1,7 +1,7 @@
 """One memory API for every demo, on either base.
 
 * **hosted** — the Membase service, with developer keys. One account, its Memories made in
-  the app (or by `scripts/bootstrap_hosted.py`). This is the product itself.
+  the app. This is the product itself.
 * **local** — the same API answered in process by the local engine
   (`membase-ai[local]`), one directory per end user. This is how an app that serves
   many people keeps each person's memory apart.
@@ -10,7 +10,7 @@ The memory API never names a Memory in a request: a read covers every Memory the
 reaches, and a write lands in its write target — the one Memory it reaches. A demo that keeps
 several Memories (one per NPC, conversations apart from follow-ups) therefore holds one
 credential per Memory: hosted, a developer key that reaches only that Memory
-(`MEMBASE_KEY_FOR_<NAME>`, which `scripts/bootstrap_hosted.py` mints); local, the engine's write
+(`MEMBASE_KEY_FOR_<NAME>`, made under Connect > Developer keys); local, the engine's write
 target set for the write, and the engine's own search over that one Memory for a read.
 
 Everything else goes through the public SDK (`membase.Membase`). The agent-trace verbs (cases
@@ -149,7 +149,7 @@ class Memory:
         if name not in self._names:
             raise ConfigError(
                 f"no Memory named {name!r} on this Membase account: create one with that name in "
-                f"the app, or run scripts/bootstrap_hosted.py --containers {name!r}"
+                f"the app"
             )
         return name
 
@@ -169,8 +169,7 @@ class Memory:
             else:
                 raise ConfigError(
                     f"{env} is not set: writing to {name!r}, or reading it alone, needs a key that "
-                    f"reaches only that Memory (Connect > Developer keys), or run "
-                    f"scripts/bootstrap_hosted.py, which mints one per Memory"
+                    f"reaches only that Memory (Connect > Developer keys)"
                 )
         return self._clients[name]
 

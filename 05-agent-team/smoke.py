@@ -1,7 +1,9 @@
 """End-to-end check against the real API: the whole team run, through the app.
 
-    uv run scripts/bootstrap_hosted.py --name 05-agent-team --containers Team --read-key
     DEMO_ENV_FILE=.secrets/05-agent-team.env uv run 05-agent-team/smoke.py
+
+On a test account with a Memory named `Team`, a write key that reaches only it
+(`MEMBASE_API_KEY`) and a Read key (`MEMBASE_READ_KEY`), made in the app.
 
 Asserts: the Investigator's finding was written; the Fixer's memory search returned it; the
 Reviewer gave a verdict; the Auditor's search worked and its write was refused with a 403.

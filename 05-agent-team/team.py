@@ -163,8 +163,7 @@ def keys() -> dict[str, str]:
         if spec["key"] == "read":
             out[role] = own or config.require(
                 "MEMBASE_READ_KEY",
-                "the Auditor needs a read-only developer key (bootstrap_hosted.py --read-key, "
-                "or Connect > Developer keys > Read)",
+                "the Auditor needs a read-only developer key (Connect > Developer keys > Read)",
             )
         else:
             out[role] = own or write
@@ -191,8 +190,8 @@ def team_container(client: Membase) -> str:
     if any(m.get("name") == CONTAINER for m in client.capabilities().get("memories") or []):
         return CONTAINER
     raise config.ConfigError(
-        f"no Memory named {CONTAINER!r} reaches this key: create it in the app, or run "
-        f"scripts/bootstrap_hosted.py --name 05-agent-team --containers {CONTAINER} --read-key"
+        f"no Memory named {CONTAINER!r} reaches this key: create it in the app and give the key "
+        f"access to it (Connect > Developer keys)"
     )
 
 

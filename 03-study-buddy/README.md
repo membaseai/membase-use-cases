@@ -160,8 +160,7 @@ uv run 03-study-buddy/app.py              # open http://127.0.0.1:8703
 
 **Hosted.** In the Membase app, create a Memory named `Study` and a developer key that can write
 and reaches only `Study` (writes land in the one Memory a key reaches), and put the key in
-`.env` (`MEMBASE_API_KEY`, or `MEMBASE_KEY_FOR_STUDY` next to a key that reaches more).
-`scripts/bootstrap_hosted.py --containers Study` makes both on a throwaway account. Seeding
+`.env` (`MEMBASE_API_KEY`, or `MEMBASE_KEY_FOR_STUDY` next to a key that reaches more). Seeding
 writes all five lectures at once and waits until Membase has learned them, about 70 s.
 
 **Local.** Add `MEMBASE_DEMO_MODE=local` to `.env`. The memory then lives in `data/03-study-buddy/`.
